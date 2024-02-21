@@ -39,8 +39,6 @@
 
                     <Button Grid.Row="4" Grid.Column="0" Text="Login" Padding="10" Margin="5"/>
                     <Button Grid.Row="4" Grid.Column="1" Text="Close" Padding="10" Margin="5"/>
-
-
                 </Grid> 
             </StackLayout>
         </ScrollView>
