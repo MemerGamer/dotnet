@@ -2,15 +2,13 @@
 
 namespace labor1.Views
 {
-    public partial class MainPage : ContentPage
+    public partial class LoginPage : ContentPage
     {
         private int _count = 0;
 
-        public MainPage()
+        public LoginPage()
         {
             InitializeComponent();
         }
-
-        
     }
 }

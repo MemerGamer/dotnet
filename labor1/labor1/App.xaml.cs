@@ -6,7 +6,12 @@
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            // 3.) LoginPage
+            // MainPage = new LoginPage();
+
+            // 4.) Form
+            MainPage = new Form();
+
             UserAppTheme = PlatformAppTheme;
         }
 
