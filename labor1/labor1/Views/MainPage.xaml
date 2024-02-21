@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
+
 <ContentPage
     x:Class="labor1.Views.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -10,43 +11,38 @@
     mc:Ignorable="d">
     <ContentPage.Content>
         <ScrollView>
-            <Grid RowDefinitions="*,40">
-                <StackLayout
-                    Padding="30"
-                    Spacing="25">
-                    
-                    <Entry
-                        x:Name="entry"
-                        TextChanged="entry_TextChanged"
-                        
-                        />
-                        
+            <StackLayout HorizontalOptions="FillAndExpand">
+                <Grid Padding="20" HorizontalOptions="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-                    <Label
-                        x:Name="labelke"
-                        Text="Hello user: " />
-                    
-                    <Button
-                        x:Name="CounterBtn"
-                        Text="Click me"
-                        Clicked="OnCounterClicked"
-                        HorizontalOptions="Fill"
-                        />
 
-                </StackLayout>
-                <Grid
-                    Grid.Row="1"
-                    BackgroundColor="{AppThemeBinding Dark={StaticResource BackgroundDark},
-                                                      Light={StaticResource Primary}}">
+                    <VerticalStackLayout Grid.Row="0" Grid.ColumnSpan="2">
+                        <Label Text="Welcome" HorizontalOptions="Center" FontSize="Large" />
+                        <Label Text="Please Login to Proceed" HorizontalOptions="Center" FontSize="Large" />
+                    </VerticalStackLayout>
 
-                    <Label
-                        x:Name="VersionLabel"
-                        HorizontalOptions="Center"
-                        TextColor="{StaticResource White}"
-                        VerticalOptions="Center" />
+                    <Label Grid.Row="2" Grid.Column="0" Text="Username: " VerticalTextAlignment="Center"/>
+                    <Entry Grid.Row="2" Grid.Column="1" Placeholder="username" VerticalTextAlignment="Center"/>
 
-                </Grid>
-            </Grid>
+                    <Label Grid.Row="3" Grid.Column="0" Text="Password: " VerticalTextAlignment="Center"/>
+                    <Entry Grid.Row="3" Grid.Column="1" Placeholder="password" VerticalTextAlignment="Center"/>
+
+                    <Button Grid.Row="4" Grid.Column="0" Text="Login" Padding="10" Margin="5"/>
+                    <Button Grid.Row="4" Grid.Column="1" Text="Close" Padding="10" Margin="5"/>
+
+
+                </Grid> 
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
