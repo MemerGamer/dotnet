@@ -12,7 +12,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout HorizontalOptions="FillAndExpand">
-                <Grid Padding="20" HorizontalOptions="Center">
+                <Grid Padding="20" HorizontalOptions="Center" Margin="0, 30">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
@@ -26,9 +26,9 @@
                     </Grid.ColumnDefinitions>
 
 
-                    <VerticalStackLayout Grid.Row="0" Grid.ColumnSpan="2">
+                    <VerticalStackLayout Grid.Row="0" Grid.ColumnSpan="2" Margin="0, 15">
                         <Label Text="Welcome" HorizontalOptions="Center" FontSize="Large" />
-                        <Label Text="Please Login to Proceed" HorizontalOptions="Center" FontSize="Large" />
+                        <Label Text="Please Login to Proceed" HorizontalOptions="Center" FontSize="Large" FontAttributes="Italic" />
                     </VerticalStackLayout>
 
                     <Label Grid.Row="2" Grid.Column="0" Text="Username: " VerticalTextAlignment="Center"/>
@@ -37,8 +37,8 @@
                     <Label Grid.Row="3" Grid.Column="0" Text="Password: " VerticalTextAlignment="Center"/>
                     <Entry Grid.Row="3" Grid.Column="1" Placeholder="password" VerticalTextAlignment="Center"/>
 
-                    <Button Grid.Row="4" Grid.Column="0" Text="Login" Padding="10" Margin="5"/>
-                    <Button Grid.Row="4" Grid.Column="1" Text="Close" Padding="10" Margin="5"/>
+                    <Button Grid.Row="4" Grid.Column="0" Text="Login" Padding="10" Margin="5" BackgroundColor="Green"/>
+                    <Button Grid.Row="4" Grid.Column="1" Text="Close" Padding="10" Margin="5" BackgroundColor="Red"/>
                 </Grid> 
             </StackLayout>
         </ScrollView>
