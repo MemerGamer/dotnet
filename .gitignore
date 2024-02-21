@@ -394,6 +394,13 @@ FodyWeavers.xsd
 *.msm
 *.msp
 
+# Maui
+*.maui.cache
+*.maui.cache.json
+*.maui.cache.json.lock
+
 # JetBrains Rider
 *.sln.iml
 .idea/
+
+
