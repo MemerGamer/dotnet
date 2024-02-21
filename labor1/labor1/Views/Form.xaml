@@ -5,7 +5,7 @@
              xmlns:views="clr-namespace:labor1.Views"
              x:Class="labor1.Views.Form">
     <ContentPage.Content>
-        <Grid>
+        <Grid VerticalOptions="Center" HorizontalOptions="Fill" BackgroundColor="Gray">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
@@ -15,10 +15,10 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <views:CustomForm Grid.Row="0" Grid.Column="0" />
-            <views:CustomForm Grid.Row="0" Grid.Column="1" />
-            <views:CustomForm Grid.Row="1" Grid.Column="0" />
-            <views:CustomForm Grid.Row="1" Grid.Column="1" />
+            <views:CustomForm Grid.Row="0" Grid.Column="0" Padding="10" Margin="15" BackgroundColor="CadetBlue"/>
+            <views:CustomForm Grid.Row="0" Grid.Column="1" Padding="10" Margin="15" BackgroundColor="CadetBlue"/>
+            <views:CustomForm Grid.Row="1" Grid.Column="0" Padding="10" Margin="15" BackgroundColor="CadetBlue"/>
+            <views:CustomForm Grid.Row="1" Grid.Column="1" Padding="10" Margin="15" BackgroundColor="CadetBlue"/>
         </Grid>
 
     </ContentPage.Content>
