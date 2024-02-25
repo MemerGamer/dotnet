@@ -16,8 +16,10 @@
             // MainPage = new ImageViewer();
             
             // 6.) GeorgeOrwell
-            MainPage = new GeorgeOrwell();
+            // MainPage = new GeorgeOrwell();
             
+            // HomeWork
+            MainPage = new HomeWork();
             UserAppTheme = PlatformAppTheme;
         }
 
