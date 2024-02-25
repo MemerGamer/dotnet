@@ -10,8 +10,10 @@
             // MainPage = new LoginPage();
 
             // 4.) Form
-            MainPage = new Form();
+            // MainPage = new Form();
 
+            // 5.) ImageViewer
+            MainPage = new ImageViewer();
             UserAppTheme = PlatformAppTheme;
         }
 

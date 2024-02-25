@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="labor1.Views.ImageViewer">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <CarouselView x:Name="Carousel"
+                          ItemsSource="{Binding Images}"
+                          HorizontalOptions="CenterAndExpand"
+                          VerticalOptions="CenterAndExpand">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding .}" Aspect="AspectFill" />
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="CenterAndExpand"
+                         VerticalOptions="EndAndExpand"
+                         Spacing="20"
+                         Margin=" 0 ,0 ,0 ,25"
+                         Padding="0,15,20,15">
+                <Label Text="{Binding CurrentImageIndex}" TextColor="White" FontSize="Large" />
+                <Button Text="Previous" Clicked="PrevButton_Clicked" />
+                <Button Text="Next" Clicked="NextButton_Clicked" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
