@@ -13,7 +13,11 @@
             // MainPage = new Form();
 
             // 5.) ImageViewer
-            MainPage = new ImageViewer();
+            // MainPage = new ImageViewer();
+            
+            // 6.) GeorgeOrwell
+            MainPage = new GeorgeOrwell();
+            
             UserAppTheme = PlatformAppTheme;
         }
 
