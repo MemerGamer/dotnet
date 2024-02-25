@@ -18,8 +18,12 @@
             // 6.) GeorgeOrwell
             // MainPage = new GeorgeOrwell();
             
+            // 7.) Extra
+            MainPage = new Extra();
+            
             // HomeWork
-            MainPage = new HomeWork();
+            // MainPage = new Homework();
+            
             UserAppTheme = PlatformAppTheme;
         }
 

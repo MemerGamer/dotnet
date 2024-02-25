@@ -1,8 +1,8 @@
 namespace labor1.Views;
 
-public partial class HomeWork : ContentPage
+public partial class Homework : ContentPage
 {
-    public HomeWork()
+    public Homework()
     {
         InitializeComponent();
     }
