@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace Bozsi
+namespace labor2maui
 {
     public static class MauiProgram
     {

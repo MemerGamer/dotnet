@@ -1,4 +1,4 @@
-﻿namespace Bozsi
+﻿namespace labor2maui
 {
     using System;
     using System.Collections.Generic;

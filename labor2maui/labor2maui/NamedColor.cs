@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Text;
 
-namespace Bozsi
+namespace labor2maui
 {
     public class NamedColor
     {

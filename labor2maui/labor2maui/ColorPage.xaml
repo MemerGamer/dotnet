@@ -4,10 +4,11 @@
              x:Class="labor2maui.ColorPage"
              xmlns:local="clr-namespace:labor2maui"
              xmlns:converteer="clr-namespace:labor2maui.Converters"
+             xmlns:converters="clr-namespace:Bozsi.Converters"
              Title="ColorPage">
     
     <ContentPage.Resources>
-        <converteer:FloatToIntConverter x:Key="intConverter"/>
+        <converters:FloatToIntConverter x:Key="intConverter"/>
     </ContentPage.Resources>
     <ScrollView>
         
