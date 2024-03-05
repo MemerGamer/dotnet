@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="labor2maui.ColorPage"
+             xmlns:local="clr-namespace:labor2maui"
+             xmlns:converteer="clr-namespace:labor2maui.Converters"
+             Title="ColorPage">
+    
+    <ContentPage.Resources>
+        <converteer:FloatToIntConverter x:Key="intConverter"/>
+    </ContentPage.Resources>
+    <ScrollView>
+        
+        <VerticalStackLayout>
+            <ListView ItemsSource="{x:Static local:NamedColor.All}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="5, 5, 0, 5"
+                                 Orientation="Horizontal"
+                                 Spacing="15">
+                                <BoxView Color="{Binding Color}" HeightRequest="50" WidthRequest="50"/>
+                                <StackLayout Padding="5, 0, 0, 0"
+                                             VerticalOptions="Center">
+                                    <Label Text="{Binding FriendlyName}"
+                                           FontAttributes="Bold"
+                                           FontSize="14"/>
+                                    <StackLayout Spacing="0" Orientation="Horizontal">
+                                        <Label Text="{Binding Red,
+                                            Converter={StaticResource intConverter},
+                                            ConverterParameter=255,
+                                            StringFormat='R={0:X2}'}"/>
+
+                                        <Label Text="{Binding Green,
+                                                Converter={StaticResource intConverter},
+                                                ConverterParameter=255,
+                                                StringFormat=' , G={0:X2}'}"/>
+
+                                        <Label Text="{Binding Blue,
+                                                Converter={StaticResource intConverter},
+                                                ConverterParameter=255,
+                                                StringFormat=' , B={0:X2}'}"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
