@@ -115,6 +115,21 @@
                     Width="141"
                     Margin="3"
                     Command="{Binding LoadDataCommand}" />
+            <Button Content="AddItem"
+                    Height="23"
+                    Width="141"
+                    Margin="3"
+                    Command="{Binding AddItemCommand}" />
+            <Button Content="DeleteItem"
+                    Height="23"
+                    Width="141"
+                    Margin="3"
+                    Command="{Binding DeleteItemCommand}" />
+            <Button Content="ClearList"
+                    Height="23"
+                    Width="141"
+                    Margin="3"
+                    Command="{Binding ClearListCommand}" />
         </StackPanel>
     </Grid>
 </Window>

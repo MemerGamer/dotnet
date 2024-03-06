@@ -15,13 +15,35 @@ namespace WPFTemplate.ViewModel
         private ObservableCollection<User> userList;
         private User selectedUser;
         public RelayCommand LoadDataCommand { get; set; }
+        public RelayCommand ClearListCommand { get; set; }
+        public RelayCommand DeleteItemCommand { get; set; }
+        public RelayCommand AddItemCommand { get; set; }
 
         public MainWindowViewModel()
         {
             this.UserList = new ObservableCollection<User>();
             this.LoadDataCommand = new RelayCommand(this.LoadDataCommandExecute);
+            this.ClearListCommand = new RelayCommand(this.ClearListCommandExecute);
+            this.DeleteItemCommand = new RelayCommand(this.DeleteItemCommandExecute);
+            this.AddItemCommand = new RelayCommand(this.AddItemCommandExecute);
         }
 
+        private void AddItemCommandExecute()
+        {
+            AddItemViewModel aiViewModel = new AddItemViewModel();
+            ViewService.ShowDialog(aiViewModel);
+        }
+        private void DeleteItemCommandExecute()
+        {
+            if (this.SelectedUser != null)
+            {
+                this.UserList.Remove(this.SelectedUser);
+            }
+        }
+        private void ClearListCommandExecute()
+        {
+            this.UserList.Clear();
+        }
         private void LoadDataCommandExecute()
         {
             if (this.userList.Count > 0)

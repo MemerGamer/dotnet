@@ -24,6 +24,8 @@ namespace WPFTemplate
         {
             ViewService.RegisterView(typeof(MainWindowViewModel),
             typeof(MainWindow));
+            ViewService.RegisterView(typeof(AddItemViewModel),
+            typeof(AddItemWindow));
         }
         private void OpenMainWindow()
         {
