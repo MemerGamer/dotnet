@@ -1,41 +1,10 @@
 ﻿namespace MonkeyFinder.ViewModel;
 
-public class BaseViewModel : INotifyPropertyChanged
+public partial class BaseViewModel : ObservableObject
 {
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    public void OnPropertyChanged([CallerMemberName] string
-        name = null) => PropertyChanged?.Invoke(this, new
-        PropertyChangedEventArgs(name));
-
+    [ObservableProperty] [NotifyPropertyChangedFor(nameof(IsNotBusy))]
     bool isBusy;
-    string title;
 
-    public bool IsBusy
-    {
-        get => isBusy;
-        set
-        {
-            if (isBusy == value)
-                return;
-            isBusy = value;
-            OnPropertyChanged();
-            // Also raise the IsNotBusy property changed
-            OnPropertyChanged(nameof(IsNotBusy));
-        }
-    }
-
+    [ObservableProperty] string title;
     public bool IsNotBusy => !IsBusy;
-
-    public string Title
-    {
-        get => title;
-        set
-        {
-            if (title == value)
-                return;
-            title = value;
-            OnPropertyChanged();
-        }
-    }
 }
