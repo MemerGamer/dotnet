@@ -17,6 +17,10 @@ namespace WPFTemplate.Model
         public string Country { get; set; }
 
 
+        public override string ToString()
+        {
+            return this.UserId + "," + this.FirstName + "," + this.LastName + "," + this.City + "," + this.State + "," + this.Country;
+        }
 
     }
 }

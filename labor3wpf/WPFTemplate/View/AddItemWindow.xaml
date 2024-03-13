@@ -9,12 +9,7 @@
         Title="AddItemWindow"
         Height="450"
         Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+    <StackPanel>
         <Grid Grid.Row="0"
               HorizontalAlignment="Center">
             <Grid.RowDefinitions>
@@ -37,7 +32,8 @@
                      Grid.Column="1"
                      Height="23"
                      Width="200"
-                     Text="{Binding ElementName=UserGrid,Path=SelectedItem.UserId}" />
+                     IsEnabled="False"
+                     Text="{Binding NewUser.UserId}" />
             <Label Grid.Row="1"
                    Grid.Column="0"
                    Content="FirstName" />
@@ -45,7 +41,7 @@
                      Grid.Column="1"
                      Height="23"
                      Width="200"
-                     Text="{Binding ElementName=UserGrid,Path=SelectedItem.FirstName}" />
+                     Text="{Binding NewUser.FirstName}" />
             <Label Grid.Row="2"
                    Grid.Column="0"
                    Content="LastName" />
@@ -53,7 +49,7 @@
                      Grid.Column="1"
                      Height="23"
                      Width="200"
-                     Text="{Binding ElementName=UserGrid,Path=SelectedItem.LastName}" />
+                     Text="{Binding NewUser.LastName}" />
             <Label Grid.Row="3"
                    Grid.Column="0"
                    Content="City" />
@@ -61,7 +57,7 @@
                      Grid.Column="1"
                      Height="23"
                      Width="200"
-                     Text="{Binding ElementName=UserGrid,Path=SelectedItem.City}" />
+                     Text="{Binding NewUser.City}" />
             <Label Grid.Row="4"
                    Grid.Column="0"
                    Content="State" />
@@ -69,7 +65,7 @@
                      Grid.Column="1"
                      Height="23"
                      Width="200"
-                     Text="{Binding ElementName=UserGrid,Path=SelectedItem.State}" />
+                     Text="{Binding NewUser.State}" />
             <Label Grid.Row="5"
                    Grid.Column="0"
                    Content="Country" />
@@ -77,14 +73,14 @@
                      Grid.Column="1"
                      Height="23"
                      Width="200"
-                     Text="{Binding ElementName=UserGrid,Path=SelectedItem.Country}" />
-            <Button Grid.Row="6"
-                    Grid.Column="1"
-                    Content="Save Item"
-                    Height="23"
-                    Width="141"
-                    Margin="3"
-                    Command="{Binding SaveItemCommand}" />
+                     Text="{Binding NewUser.Country}" />
         </Grid>
-    </Grid>
+        <Button Grid.Row="6"
+                Grid.Column="1"
+                Content="Save Item"
+                Height="23"
+                Width="141"
+                Margin="3"
+                Command="{Binding SaveDataCommand}" />
+    </StackPanel>
 </Window>

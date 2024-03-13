@@ -2,9 +2,11 @@
 {
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
+    using WPFTemplate.ViewModel;
 
     public class ViewModelBase : INotifyPropertyChanged
     {
+        public static MainWindowViewModel Instance { get; set; }
         public ViewModelBase()
         {
         }

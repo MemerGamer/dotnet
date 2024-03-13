@@ -6,6 +6,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+
 
 
 namespace WPFTemplate.ViewModel
@@ -18,19 +20,36 @@ namespace WPFTemplate.ViewModel
         public RelayCommand ClearListCommand { get; set; }
         public RelayCommand DeleteItemCommand { get; set; }
         public RelayCommand AddItemCommand { get; set; }
+        public RelayCommand UpdateItemCommand { get; set; }
+
+        private AddItemViewModel aiViewModel;
 
         public MainWindowViewModel()
         {
+            Instance = this;
             this.UserList = new ObservableCollection<User>();
             this.LoadDataCommand = new RelayCommand(this.LoadDataCommandExecute);
             this.ClearListCommand = new RelayCommand(this.ClearListCommandExecute);
             this.DeleteItemCommand = new RelayCommand(this.DeleteItemCommandExecute);
             this.AddItemCommand = new RelayCommand(this.AddItemCommandExecute);
+            this.UpdateItemCommand = new RelayCommand(this.UpdateCommandExecute);
+            aiViewModel = new AddItemViewModel();
         }
 
+        private void UpdateCommandExecute()
+        {
+            using (StreamWriter writer = new StreamWriter(@"Users.txt"))
+            {
+                foreach (User user in this.UserList)
+                {
+                    writer.WriteLine(user.ToString());
+                }
+            }
+        }
         private void AddItemCommandExecute()
         {
-            AddItemViewModel aiViewModel = new AddItemViewModel();
+
+            aiViewModel.NewUser.UserId = this.UserList.Count + 1;
             ViewService.ShowDialog(aiViewModel);
         }
         private void DeleteItemCommandExecute()
@@ -62,8 +81,8 @@ namespace WPFTemplate.ViewModel
                 user.City = words[3];
                 user.State = words[4];
                 user.Country = words[5];
-
                 this.userList.Add(user);
+
             }
         }
 
