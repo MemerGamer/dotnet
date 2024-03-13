@@ -2,7 +2,7 @@
 using MonkeyFinder.View;
 
 namespace MonkeyFinder;
-
+using MonkeyFinder.Services;
 public static class MauiProgram
 {
 	public static MauiApp CreateMauiApp()
@@ -20,7 +20,8 @@ public static class MauiProgram
 #endif
 
 		builder.Services.AddSingleton<MainPage>();
-
+		builder.Services.AddSingleton<MonkeyService>();
+		builder.Services.AddSingleton<MonkeysViewModel>();
 		return builder.Build();
 	}
 }
