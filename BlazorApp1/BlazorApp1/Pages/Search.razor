@@ -1,0 +1,63 @@
+﻿@page "/search"
+
+<PageTitle>Search</PageTitle>
+
+<h1>Search</h1>
+
+@* @foreach (var movie in Movies)
+{
+	<p>@movie.Title</p>
+} *@
+
+<input @bind="searchTerm" @onkeydown="@Enter"/>
+<button @onclick="SearchMovies" >Search</button>
+@* trigger search on enter and on button click *@
+
+
+
+@if (Movies?.Count > 0)
+{
+    <div class="container-fluid">
+        <div class="row">
+            @foreach (var movie in Movies)
+            {
+                <div class="col-3">
+                    <a href="">
+                        @* todo: if https://image.tmdb.org/t/p/w300_and_h450_bestv2/@movie?.Poster?.Replace("/", "") not null else placeholder image *@
+                        <img style="width:300px;height:450px; margin-bottom: 10px;" src="@(!string.IsNullOrEmpty(movie?.Poster) ? $"https://image.tmdb.org/t/p/w300_and_h450_bestv2/{movie.Poster.Replace("/", "")}" : placeholderImage)" />
+                        @* @movie?.Title*@
+                    </a>
+                    <p>@movie?.Title</p>
+                </div>
+            }
+        </div>
+    </div>
+}
+
+@code {
+    List<Movie> Movies = new List<Movie>();
+    string searchTerm = string.Empty;
+    string placeholderImage = "https://via.assets.so/img.jpg?w=300&h=450&tc=gray&bg=#cecece&t=MissingImage";
+
+    protected override async Task OnInitializedAsync()
+    {
+        var client = new ApiClient();
+        Movies = client.Search("");
+    }
+
+    private void SearchMovies()
+    {
+        var client = new ApiClient();
+
+        Movies = client.Search(searchTerm);
+    }
+    
+    private void Enter(KeyboardEventArgs e)
+    {
+        if (e.Code == "Enter" || e.Code == "NumpadEnter")
+        {
+            SearchMovies();
+        }
+    }
+
+}
