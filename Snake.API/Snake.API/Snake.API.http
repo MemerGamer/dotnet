@@ -1,0 +1,6 @@
+@Snake.API_HostAddress = http://localhost:5152
+
+GET {{Snake.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
